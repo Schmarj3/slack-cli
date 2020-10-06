@@ -3,7 +3,7 @@ require 'dotenv'
 require 'httparty'
 
 require_relative 'workspace'
-
+Dotenv.load
 
 def main
   puts "Welcome to the Ada Slack CLI!"
@@ -20,7 +20,6 @@ main if __FILE__ == $PROGRAM_NAME
 
 query_parameters = {
     token: ENV["SLACK_TOKEN"]
-    # no longitude
 }
 
 
