@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+require 'dotenv'
+require 'httparty'
+bun
 require_relative 'workspace'
 
 def main
