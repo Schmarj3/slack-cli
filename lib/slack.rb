@@ -4,7 +4,6 @@ require 'httparty'
 
 require_relative 'workspace'
 
-
 def main
   puts "Welcome to the Ada Slack CLI!"
   workspace = Workspace.new("Fun", ["general", "questions", "seattle-stuff"], ["sophia"])
@@ -20,7 +19,6 @@ main if __FILE__ == $PROGRAM_NAME
 
 query_parameters = {
     token: ENV["SLACK_TOKEN"]
-    # no longitude
 }
 
 
