@@ -3,7 +3,7 @@ require 'dotenv'
 require 'httparty'
 
 require_relative 'workspace'
-
+dotenv.load
 def main
   puts "Welcome to the Ada Slack CLI!"
   workspace = Workspace.new("Fun", ["general", "questions", "seattle-stuff"], ["sophia"])
