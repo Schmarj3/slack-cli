@@ -7,7 +7,7 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/skip_dsl'
-require 'vcr'
+require 'vcr/filter_sensitive_data'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
