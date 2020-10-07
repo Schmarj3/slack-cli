@@ -1,6 +1,8 @@
+require_relative 'recipient'
+
 module Workspace
-  class Channel < Recepient
-    attr_reader :topic, :member_count
+  class Channel < Recipient
+    attr_reader :topic, :member_count,
 
     def initialize(topic, member_count)
       super(slack_id, name)
