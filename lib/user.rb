@@ -26,14 +26,14 @@ class User < Recipient
   end
 
   def self.list_all
-    response = self.get(USER_URL, PARAMS)
-    pp response["members"]
-    #                .map do |user_hash|
-    #   return new(
-    #       user_hash["id"],
-    #       user_hash["name"],
-    #       user_hash["real_name"]
-    #   )
-    # end
+    all_members = self.get(USER_URL, PARAMS)["members"]
+
+    all_members.map do |user_hash|
+      return new(
+          user_hash["id"],
+          user_hash["name"],
+          user_hash["real_name"]
+      )
+    end
   end
 end

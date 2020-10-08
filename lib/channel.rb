@@ -28,7 +28,9 @@ class Channel < Recipient
   end
 
   def self.list_all
-    self.get(CHANNEL_URL, PARAMS)["channels"].map do |channel_hash|
+    all_channels = self.get(CHANNEL_URL, PARAMS)["channels"]
+
+    all_channels.map do |channel_hash|
       return new(
           channel_hash["id"],
           channel_hash["name"],
