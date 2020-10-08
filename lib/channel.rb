@@ -5,10 +5,7 @@ require_relative 'recipient'
 Dotenv.load
 
 
-URL = "https://slack.com/api/conversations.list"
-PARAMS = {
-    token: ENV["SLACK_TOKEN"]
-}
+CHANNEL_URL = "https://slack.com/api/conversations.list"
 
 
 class Channel < Recipient
@@ -16,71 +13,61 @@ class Channel < Recipient
 
   def initialize(slack_id, name, topic, member_count)
     super(slack_id, name)
-    @slack_id = slack_id
-    @name = name
     @topic = topic
     @member_count = member_count
   end
 
-  def get(url, params)
+  def self.get(url, params)
     response = HTTParty.get(url, query: params)
     return response
   end
 
 
   def details
-    return get(URL, PARAMS)
     # display details (channel name, topic, member count, slack ID)
   end
 
   def self.list_all
-  #  an array of all the oublic channel names
-  end
+    self.get(CHANNEL_URL, PARAMS)["channels"].map do |channel_hash|
+      return new(
+          channel_hash["id"],
+          channel_hash["name"],
+          channel_hash["topic"],
+          channel_hash["num_members"]
+      )
+    end
 
+
+  #  an array of all the oublic channel names
+  #
+  end
 end
 
 
-
-channels = Channel.new("asdofjof", "nadknl", "odsfosd", 5)
-
-pp channels.details
-
-# query_parameters = {
-#     token: ENV["SLACK_TOKEN"]
-# }
-
-
-# url = 'https://slack.com/api/conversations.list'
-# response = HTTParty.get(url, query: query_parameters)
-
-# pp response
+#
+# def initialize(directory: './support')
+#   @passengers = Passenger.load_all(directory: directory)
+#   @trips = Trip.load_all(directory: directory)
+#   @drivers = Driver.load_all(directory: directory)
+#   connect_trips
+# end
+#
+# def self.load_all(full_path: nil, directory: nil, file_name: nil)
+#   full_path ||= build_path(directory, file_name)
+#
+#   return CSV.read(
+#       full_path,
+#       headers: true,
+#       header_converters: :symbol,
+#       converters: :numeric
+#   ).map { |record| from_csv(record) }
+# end
 #
 #
-# workspace : {
-#     "ok"=> true,
-#     "channel": [
-#         {
-#             general-channel
-#         },
-#         {
-#             random-channel
-#         },
-#         {
-#             ada-slack-cli
-#         }
-#     ]
-# }
-#
-# workspace : {
-#     "ok"=> true,
-#     "channel": [{channel at index 0}, {channel at index 1}, {channel at index 2}]
-#     "channel": ["fire", "air", "water"]
-#     "channel": [0, 1, 2]
-# }
-# puts response["channels"][1]["creater"]
-#
-# response["channels"][i]
-
-# response["channels"].each do |i|
-#   puts i["purpose"]["last_set"]
-#
+# def self.from_csv(record)
+#   return new(
+#       id: record[:id],
+#       name: record[:name],
+#       phone_number: record[:phone_num]
+#   )
+# end

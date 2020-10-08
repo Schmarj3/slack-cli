@@ -5,39 +5,39 @@ require_relative 'channel'
 class Workspace
   attr_reader :channels, :users, :selected
 
-  def initialize(selected)
-    @channels = []
-    @users = []
-    @selected = selected
+  def initialize(selected: nil)
+    @channels = Channel.list_all
+    @users = User.list_all
+    @selected
   end
 
   # def add_channel (channel)
   # @channels << channel
   # end
-
-  def select_channel(name, slack_id)
-    selected variable
-    if searching by name
-      selected = find name in list of @channels["name"]
-    end
-
-    if searching by slack_id
-      selected = find slack_id in the list of @channels["id"]
-    end
-    #return selected
-  end
-
-  def select_user(name, slack_id)
-    selected variable
-    if searching by name
-      selected = find name in list of @users["name"]
-    end
-
-    if searching by slack_id
-      selected = find slack_id in the list of @users["id"]
-    end
-    #return selected
-  end
+  #
+  # def select_channel(name, slack_id)
+  #   selected variable
+  #   if searching by name
+  #     selected = find name in list of @channels["name"]
+  #   end
+  #
+  #   if searching by slack_id
+  #     selected = find slack_id in the list of @channels["id"]
+  #   end
+  #   #return selected
+  # end
+  #
+  # def select_user(name, slack_id)
+  #   selected variable
+  #   if searching by name
+  #     selected = find name in list of @users["name"]
+  #   end
+  #
+  #   if searching by slack_id
+  #     selected = find slack_id in the list of @users["id"]
+  #   end
+  #   #return selected
+  # end
 
   def show_details
     # if select_user returned
@@ -50,3 +50,7 @@ class Workspace
     #
   end
 end
+
+new_workspace = Workspace.new()
+
+pp new_workspace
