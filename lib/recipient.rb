@@ -1,3 +1,4 @@
+
 module Workspace
   class Recipient
     attr_reader :slack_id, :name
