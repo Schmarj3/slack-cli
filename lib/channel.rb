@@ -5,6 +5,11 @@ require_relative 'recipient'
 Dotenv.load
 
 
+URL = "https://slack.com/api/"
+PARAMS = {
+    token: ENV["SLACK_TOKEN"]
+}
+
 module Workspace
   class Channel < Recipient
     attr_reader :topic, :member_count,
@@ -15,7 +20,14 @@ module Workspace
       @member_count = member_count
     end
 
+    def self.get(url, params)
+      response = HTTParty.get(URL, query: PARAMS)
+      return response
+    end
+
+
     def details
+
       display details (channel name, topic, member count, slack ID)
     end
 
