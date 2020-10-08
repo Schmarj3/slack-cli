@@ -21,13 +21,13 @@ module Workspace
     end
 
     def self.get(url, params)
-      response = HTTParty.get(URL, query: PARAMS)
+      response = HTTParty.get(url, query: params)
       return response
     end
 
 
     def details
-
+      p
       display details (channel name, topic, member count, slack ID)
     end
 
