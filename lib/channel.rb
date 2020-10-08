@@ -5,17 +5,19 @@ require_relative 'recipient'
 Dotenv.load
 
 
-URL = "https://slack.com/api/"
+URL = "https://slack.com/api/conversations.list"
 PARAMS = {
     token: ENV["SLACK_TOKEN"]
 }
 
 module Workspace
   class Channel < Recipient
-    attr_reader :topic, :member_count,
+    attr_reader :slack_id, :name, :topic, :member_count,
 
-    def initialize(topic, member_count)
-      super(slack_id, name)
+    def initialize(slack_id, name, topic, member_count)
+      # super(slack_id, name)
+      @slack_id = slack_id
+      @name = name
       @topic = topic
       @member_count = member_count
     end
@@ -27,8 +29,8 @@ module Workspace
 
 
     def details
-      p
-      display details (channel name, topic, member count, slack ID)
+      p self.get(URL, PARAMS)
+      # display details (channel name, topic, member count, slack ID)
     end
 
     def self.list_all
@@ -38,6 +40,10 @@ module Workspace
   end
 end
 
+
+channels = Workspace::Channel.new
+
+p channels.details
 
 # query_parameters = {
 #     token: ENV["SLACK_TOKEN"]
