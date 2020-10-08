@@ -12,7 +12,7 @@ PARAMS = {
 
 module Workspace
   class Channel < Recipient
-    attr_reader :slack_id, :name, :topic, :member_count,
+    attr_reader :slack_id, :name, :topic, :member_count
 
     def initialize(slack_id, name, topic, member_count)
       # super(slack_id, name)
@@ -22,14 +22,14 @@ module Workspace
       @member_count = member_count
     end
 
-    def self.get(url, params)
+    def get(url, params)
       response = HTTParty.get(url, query: params)
       return response
     end
 
 
     def details
-      p self.get(URL, PARAMS)
+      p get(URL, PARAMS)
       # display details (channel name, topic, member count, slack ID)
     end
 
@@ -41,7 +41,7 @@ module Workspace
 end
 
 
-channels = Workspace::Channel.new
+channels = Workspace::Channel.new("asdofjof", "nadknl", "odsfosd", 5)
 
 p channels.details
 
