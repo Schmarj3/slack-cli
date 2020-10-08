@@ -8,21 +8,21 @@ module Workspace
     end
 
     def send_message(message)
-
+      raise NotImplementedError, 'Implement me in a child class!'
     end
 
     def self.get(url, params)
-
+      raise NotImplementedError, 'Implement me in a child class!'
     end
 
     private
 
     def details
-
+      raise NotImplementedError, 'Implement me in a child class!'
     end
 
     def self.list_all
-      #  wave 1
+      raise NotImplementedError, 'Implement me in a child class!'
     end
 
   end

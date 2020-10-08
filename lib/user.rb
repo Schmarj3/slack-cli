@@ -10,7 +10,7 @@ module Workspace
         end
 
     def details
-
+      find all the details of user based on real_name, name, slack_id
     end
 
     def self.list_all
