@@ -11,16 +11,15 @@ USER_URL = "https://slack.com/api/users.list"
 class User < Recipient
   attr_reader :real_name
 
-      def initialize(slack_id, name, real_name)
-        super(slack_id, name)
-        @real_name = real_name
-      end
+  def initialize(slack_id, name, real_name)
+    super(slack_id, name)
+    @real_name = real_name
+  end
 
   def self.get(url, params)
     response = HTTParty.get(url, query: params)
     return response
   end
-
 
   def details
   #   # display details (channel name, topic, member count, slack ID)
