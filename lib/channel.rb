@@ -36,10 +36,6 @@ class Channel < Recipient
           channel_hash["num_members"]
       )
     end
-
-
-  #  an array of all the oublic channel names
-  #
   end
 end
 

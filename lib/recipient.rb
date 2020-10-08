@@ -2,10 +2,8 @@ require 'dotenv'
 require 'httparty'
 Dotenv.load
 
-PARAMS = {
-    token: ENV["SLACK_TOKEN"]
-}
 
+PARAMS = {token: ENV["SLACK_TOKEN"]}
 
 class Recipient
   attr_reader :slack_id, :name
