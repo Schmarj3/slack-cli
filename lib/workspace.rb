@@ -15,17 +15,17 @@ class Workspace
   # @channels << channel
   # end
   #
-  # def select_channel(name, slack_id)
-  #   selected variable
-  #   if searching by name
-  #     selected = find name in list of @channels["name"]
-  #   end
-  #
-  #   if searching by slack_id
-  #     selected = find slack_id in the list of @channels["id"]
-  #   end
-  #   #return selected
-  # end
+
+
+  def select_channel(name, slack_id)
+    if name
+      selected = @channels.filter {|hash| hash["name"] == name }
+    elsif slack_id
+      selected = @channels.filter {|hash| hash["id"] == slack_id }
+    end
+
+    return selected
+  end
   #
   # def select_user(name, slack_id)
   #   selected variable

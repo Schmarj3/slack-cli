@@ -22,7 +22,7 @@ class User < Recipient
   end
 
   def details
-  #   # display details (channel name, topic, member count, slack ID)
+    puts "slack_id: #{slack_id}, name: #{name}, real_name: #{real_name}"
   end
 
   def self.list_all
