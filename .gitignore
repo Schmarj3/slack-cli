@@ -4,4 +4,4 @@
 .idea/
 
 # Ignore environemnt variables
-lib/.env
+.env

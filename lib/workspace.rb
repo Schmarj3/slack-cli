@@ -5,7 +5,7 @@ require_relative 'channel'
 class Workspace
   attr_reader :channels, :users, :selected
 
-  def initialize
+  def initialize(selected)
     @channels = []
     @users = []
     @selected = selected

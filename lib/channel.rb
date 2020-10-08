@@ -10,40 +10,40 @@ PARAMS = {
     token: ENV["SLACK_TOKEN"]
 }
 
-module Workspace
-  class Channel < Recipient
-    attr_reader :slack_id, :name, :topic, :member_count
 
-    def initialize(slack_id, name, topic, member_count)
-      # super(slack_id, name)
-      @slack_id = slack_id
-      @name = name
-      @topic = topic
-      @member_count = member_count
-    end
+class Channel < Recipient
+  attr_reader :topic, :member_count
 
-    def get(url, params)
-      response = HTTParty.get(url, query: params)
-      return response
-    end
-
-
-    def details
-      p get(URL, PARAMS)
-      # display details (channel name, topic, member count, slack ID)
-    end
-
-    def self.list_all
-
-    end
-
+  def initialize(slack_id, name, topic, member_count)
+    super(slack_id, name)
+    @slack_id = slack_id
+    @name = name
+    @topic = topic
+    @member_count = member_count
   end
+
+  def get(url, params)
+    response = HTTParty.get(url, query: params)
+    return response
+  end
+
+
+  def details
+    return get(URL, PARAMS)
+    # display details (channel name, topic, member count, slack ID)
+  end
+
+  def self.list_all
+  #  an array of all the oublic channel names
+  end
+
 end
 
 
-channels = Workspace::Channel.new("asdofjof", "nadknl", "odsfosd", 5)
 
-p channels.details
+channels = Channel.new("asdofjof", "nadknl", "odsfosd", 5)
+
+pp channels.details
 
 # query_parameters = {
 #     token: ENV["SLACK_TOKEN"]
