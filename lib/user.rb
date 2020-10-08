@@ -29,7 +29,7 @@ class User < Recipient
     all_members = self.get(USER_URL, PARAMS)["members"]
 
     all_members.map do |user_hash|
-      return new(
+      new(
           user_hash["id"],
           user_hash["name"],
           user_hash["real_name"]

@@ -31,7 +31,7 @@ class Channel < Recipient
     all_channels = self.get(CHANNEL_URL, PARAMS)["channels"]
 
     all_channels.map do |channel_hash|
-      return new(
+      new(
           channel_hash["id"],
           channel_hash["name"],
           channel_hash["topic"],

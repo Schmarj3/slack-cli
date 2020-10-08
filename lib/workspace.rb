@@ -53,4 +53,11 @@ end
 
 new_workspace = Workspace.new()
 
-pp new_workspace
+pp new_workspace.channels
+pp new_workspace.users
+
+# pp new_workspace.select_channel("general", "C01BNBZJVU7")
+#
+# pp new_workspace.select_channel("general", nil)
+#
+# pp new_workspace.select_channel(nil, "C01BNBZJVU7")
