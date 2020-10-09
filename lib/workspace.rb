@@ -11,12 +11,6 @@ class Workspace
     @selected = select_channel(name, slack_id) ? select_channel(name, slack_id) : select_user(name, slack_id)
   end
 
-  # def add_channel (channel)
-  # @channels << channel
-  # end
-  #
-
-
   def select_channel(name, slack_id)
     if name
       selected = @channels.filter {|hash| hash.name == name }[0]
@@ -28,7 +22,7 @@ class Workspace
 
     return selected
   end
-  #
+
   def select_user(name, slack_id)
     if name
       selected = @users.filter {|hash| hash.name == name }[0]
@@ -42,7 +36,7 @@ class Workspace
     return selected
   end
 
-  def show_details
+  def show_details(selected_value)
     if channel
     details = select_channel()
     end

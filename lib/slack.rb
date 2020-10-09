@@ -31,12 +31,13 @@ def main
       workspace.channels.each { |channel| puts channel.name }
     when "C", "SELECT USER"
       user_name = gets.chomp
-      workspace.select_user(user_name, nil)
+      @selected = workspace.select_user(user_name, nil)
     when "D", "SELECT CHANNEL"
       channel_name = gets.chomp
-      workspace.select_channel(channel_name, nil)
+      @selected = workspace.select_channel(channel_name, nil)
     when "E", "DETAILS"
       p "show details on the current recipient"
+      workspace.show_details(selected)
     when "F", "QUIT PROGRAM"
       exit_program = true
     else
