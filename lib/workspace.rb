@@ -13,11 +13,11 @@ class Workspace
 
   def select_channel(name, slack_id)
     if name
-      selected = @channels.filter {|hash| hash.name == name }[0]
-      puts "You have selected: #{selected.name}"
+      @selected = @channels.filter {|hash| hash.name == name }[0]
+      puts "You have selected: #{@selected.name}"
     elsif slack_id
-      selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
-      puts "You have selected: #{selected.slack_id}"
+      @selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
+      puts "You have selected: #{@selected.slack_id}"
     end
 
     return selected
@@ -25,21 +25,20 @@ class Workspace
 
   def select_user(name, slack_id)
     if name
-      selected = @users.filter {|hash| hash.name == name }[0]
-      puts "You have selected: #{selected.name}"
+      @selected = @users.filter {|hash| hash.name == name }[0]
+      puts "You have selected: #{@selected.name}"
 
     elsif slack_id
-      selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
-      puts "You have selected: #{selected.slack_id}"
+      @selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
+      puts "You have selected: #{@selected.slack_id}"
+
     end
 
     return selected
   end
 
-  def show_details(selected_value)
-    if channel
-    details = select_channel()
-    end
+  def show_details
+    @selected ? @selected.details : "No recipient is currently selected"
   end
 
   def send_message
