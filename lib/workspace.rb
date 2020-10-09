@@ -13,31 +13,49 @@ class Workspace
 
   def select_channel(name, slack_id)
     if name
-      @selected = @channels.filter {|hash| hash.name == name }[0]
-      puts "You have selected: #{@selected.name}"
+      selected = @channels.filter {|hash| hash.name == name }[0]
+      results  = selected.nil? ? "No channel by that name" : selected.name
+      puts "Result: #{results}"
     elsif slack_id
-      @selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
-      puts "You have selected: #{@selected.slack_id}"
+      selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
+      results  = selected.nil? ? "No channel by that name" : selected.slack_id
+      puts "Result: #{results}"
     end
+    @selected = selected
+    return selected
   end
 
   def select_user(name, slack_id)
     if name
-      @selected = @users.filter {|hash| hash.name == name }[0]
-      puts "You have selected: #{@selected.name}"
-
+      selected = @users.filter {|hash| hash.name == name }[0]
+      results  = selected.nil? ? "No user by that name" : selected.name
+      puts "Result: #{results}"
     elsif slack_id
-      @selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
-      puts "You have selected: #{@selected.slack_id}"
+      selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
+      results  = selected.nil? ? "No user by that name" : selected.slack_id
+      puts "Result: #{results}"
+    else
+      puts "Please try again"
     end
+    @selected = selected
+    return selected
   end
 
   def show_details
-    @selected ? @selected.details : p "No recipient is currently selected"
+    if @selected.is_a?(User)
+      [@selected.slack_id, @selected.name, @selected.real_name]
+    elsif @selected.is_a?(Channel)
+      [@selected.name, @selected.topic, @selected.member_count, @selected.slack_id]
+    end
   end
 
+  # def show_details
+  #   @selected ? @selected.details : puts("No recipient is currently selected.")
+  # end
+
   def send_message
-    #
+    # store the user's message
+    # semd message to the @selected recipient
   end
 end
 #

@@ -22,7 +22,6 @@ class Channel < Recipient
     return response
   end
 
-
   def details
     puts "slack_id: #{slack_id}, name: #{name}, topic: #{topic}, member_count: #{member_count}"
   end

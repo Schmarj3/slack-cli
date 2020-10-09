@@ -19,7 +19,8 @@ def main
     puts "C. Select User"
     puts "D. Select Channel"
     puts "E. Details"
-    puts "F. Quit Program"
+    puts "F. Send Message"
+    puts "G. Quit Program"
     puts
     user_input = gets.chomp.upcase
     puts
@@ -37,8 +38,11 @@ def main
       workspace.select_channel(channel_name, nil)
     when "E", "DETAILS"
       p "show details on the current recipient"
-      workspace.show_details
-    when "F", "QUIT PROGRAM"
+      pp workspace.show_details
+    when "F", "SEND MESSAGE"
+      p "send a message to the current recipient"
+      # workspace.send_message
+    when "G", "QUIT PROGRAM"
       exit_program = true
     else
       puts "Incorrect value, please try again"
