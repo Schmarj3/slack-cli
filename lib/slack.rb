@@ -12,6 +12,7 @@ def main
   exit_program = false
 
   until exit_program
+    puts
     puts "Please select an option:"
     puts "A. List Users"
     puts "B. List Channels"
@@ -19,19 +20,21 @@ def main
     puts "D. Select Channel"
     puts "E. Details"
     puts "F. Quit Program"
+    puts
     user_input = gets.chomp.upcase
+    puts
 
     case user_input
     when "A", "LIST USERS"
-      p workspace.users
+      workspace.users.each { |user| puts user.name }
     when "B", "LIST CHANNELS"
-      p workspace.channels
+      workspace.channels.each { |channel| puts channel.name }
     when "C", "SELECT USER"
-      p workspace.selected
-      p "print out selected user as the current recipient"
+      user_name = gets.chomp
+      workspace.select_user(user_name, nil)
     when "D", "SELECT CHANNEL"
-      p workspace.selected
-      p "print out selected channel as the current recipient"
+      channel_name = gets.chomp
+      workspace.select_channel(channel_name, nil)
     when "E", "DETAILS"
       p "show details on the current recipient"
     when "F", "QUIT PROGRAM"
