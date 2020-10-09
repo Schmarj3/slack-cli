@@ -8,7 +8,7 @@ class Workspace
   def initialize(selected: nil)
     @channels = Channel.list_all
     @users = User.list_all
-    @selected = select_channel(name, slack_id) ? select_channel(name, slack_id) : select_user(name, slack_id)
+    @selected
   end
 
   def select_channel(name, slack_id)
