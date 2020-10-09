@@ -19,8 +19,6 @@ class Workspace
       @selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
       puts "You have selected: #{@selected.slack_id}"
     end
-
-    return selected
   end
 
   def select_user(name, slack_id)
@@ -31,14 +29,11 @@ class Workspace
     elsif slack_id
       @selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
       puts "You have selected: #{@selected.slack_id}"
-
     end
-
-    return selected
   end
 
   def show_details
-    @selected ? @selected.details : "No recipient is currently selected"
+    @selected ? @selected.details : p "No recipient is currently selected"
   end
 
   def send_message
