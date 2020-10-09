@@ -54,7 +54,10 @@ class Workspace
   # def show_details
   #   @selected ? @selected.details : puts("No recipient is currently selected.")
   # end
+  module SlackApiWrapper
+    BASE_URL = ""
 
+  end
   def send_message
     # store the user's message
     # semd message to the @selected recipient
