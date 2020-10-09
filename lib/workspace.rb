@@ -11,6 +11,7 @@ class Workspace
     @selected
   end
 
+  # possible refactoring using .find & one parameter
   def select_channel(name, slack_id)
     if name
       selected = @channels.filter {|hash| hash.name == name }[0]
@@ -25,6 +26,7 @@ class Workspace
     return selected
   end
 
+  # possible refactoring using .find & one parameter
   def select_user(name, slack_id)
     if name
       selected = @users.filter {|hash| hash.name == name }[0]
@@ -43,9 +45,9 @@ class Workspace
 
   def show_details
     if @selected.is_a?(User)
-      [@selected.slack_id, @selected.name, @selected.real_name]
+      pp [@selected.slack_id, @selected.name, @selected.real_name]
     elsif @selected.is_a?(Channel)
-      [@selected.name, @selected.topic, @selected.member_count, @selected.slack_id]
+      pp [@selected.name, @selected.topic, @selected.member_count, @selected.slack_id]
     end
   end
 
