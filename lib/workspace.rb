@@ -1,6 +1,5 @@
 require_relative 'user'
 require_relative 'channel'
-require_relative 'slack_api_wrapper'
 
 class Workspace
   attr_reader :channels, :users, :selected

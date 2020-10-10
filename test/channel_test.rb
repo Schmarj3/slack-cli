@@ -38,8 +38,8 @@ describe "Channel Class" do
 
 
   end
-  xdescribe "list all" do
-    expect(@channel.list_all).must_be_equal to self.list_all
-
-  end
+  # xdescribe "list all" do
+  #   expect(@channel.list_all).must_be_equal to self.list_all
+  #
+  # end
 end
