@@ -14,7 +14,6 @@ describe "Channel Class" do
               },
               "num_members": 4
           }
-    end
 
       @channel = Channel.new(
           @test_slack['id'],
@@ -22,8 +21,14 @@ describe "Channel Class" do
           @test_slack['topic'],
           @test_slack['num_members']
       )
-  end
+    end
 
+    it "creates a new channel" do
+      expect(@channel).must_be_kind_of Channel
+    end
+
+
+  end
   describe "initialize" do
 
   end

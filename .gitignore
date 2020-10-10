@@ -6,3 +6,4 @@
 # Ignore environemnt variables
 .env
 .byebug_history
+coverage
