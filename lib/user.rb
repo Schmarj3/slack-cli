@@ -15,15 +15,6 @@ class User < Recipient
     @real_name = real_name
   end
 
-  # def self.get(url, params)
-  #   response = HTTParty.get(url, query: params)
-  #   return response
-  # end
-
-  # def details
-  #   puts "slack_id: #{slack_id}, name: #{name}, real_name: #{real_name}"
-  # end
-
   def self.list_all
     all_members = self.get(USER_URL, PARAMS)["members"]
 
@@ -35,8 +26,4 @@ class User < Recipient
       )
     end
   end
-
-  # def send_message(message)
-  #   # call on the recepient class here to send message to user
-  # end
 end
