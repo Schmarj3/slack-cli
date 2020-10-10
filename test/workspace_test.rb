@@ -2,17 +2,13 @@ require_relative 'test_helper'
 require 'workspace'
 
 describe "Workspace Class" do
-
-  describe "initialize" do
-    before do
-      @channels = [1,2,3,4]
-      @users = ["A", "B", "C", "D"]
-      @selected = nil
-
+  before do
+    VCR.use_cassette("create a workspace") do
       @workspace = Workspace.new
     end
-
-    it "creates a new workspace" do
+  end
+  describe "initialize" do
+    it "is an instance of workspace" do
       expect(@workspace).must_be_kind_of Workspace
     end
 
@@ -27,11 +23,22 @@ describe "Workspace Class" do
     it "default value of selected is nil" do
       expect(@workspace.selected).must_be_nil
     end
-
-
   end
-  # xdescribe "list all" do
-  #   expect(@channel.list_all).must_be_equal to self.list_all
-  #
-  # end
+
+  describe "select_channel method" do
+    it "should return channel instance for 'random'" do
+      #when gets.chomp = "random"
+      puts "Type : random"
+      selected = @workspace.select_channel
+
+      expect(selected).must_be_kind_of Channel
+      expect(selected.name).must_equal "random"
+    end
+
+    it "test for no matching channel" do
+      #when gets.chomp = "test"
+      puts "Type : test"
+      expect(@workspace.select_channel).must_be_nil
+    end
+  end
 end

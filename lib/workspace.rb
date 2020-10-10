@@ -1,5 +1,6 @@
 require_relative 'user'
 require_relative 'channel'
+require 'httparty'
 
 class Workspace
   attr_reader :channels, :users, :selected
