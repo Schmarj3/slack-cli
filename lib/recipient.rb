@@ -2,7 +2,8 @@ require 'dotenv'
 require 'httparty'
 Dotenv.load
 
-BASE_URL = 'https://slack.com/api/'
+# BASE_URL = 'https://slack.com/api/'
+
 API_KEY = ENV['SLACK_TOKEN']
 PARAMS = {token: API_KEY}
 
@@ -15,24 +16,26 @@ class Recipient
   end
 
   def send_message(message)
-    # raise NotImplementedError, 'Implement me in a child class!'
+    p message
+    p API_KEY
+    p @slack_id
+    # p BASE_URL
 
     response = HTTParty.post(
-        "#{BASE_URL}/chat.postMessage",
+        "https://slack.com/api/chat.postMessage",
         body:  {
             token: API_KEY,
             text: message,
-            channel: channel
+            channel: @slack_id
         },
         headers: { 'Content-Type' => 'application/x-www-form-urlencoded' }
     )
-
     return response.code == 200 && response.parsed_response["ok"]
   end
 
   def self.get(url, params)
-    raise NotImplementedError, 'Implement me in a child class!'
-    # response = HTTParty.get(url, query: params)
+    response = HTTParty.get(url, query: params)
+    return response
   end
 
   private

@@ -58,6 +58,6 @@ class Workspace
     # semd message to the @selected recipient
     puts "Enter your message here:"
     message = gets.chomp
-    @selected.send_message(message)
+    pp @selected.send_message(message)
   end
 end

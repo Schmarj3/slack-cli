@@ -5,7 +5,7 @@ require_relative 'recipient'
 Dotenv.load
 
 
-CHANNEL_URL = "#{BASE_URL}conversations.list"
+CHANNEL_URL = "https://slack.com/api/conversations.list"
 
 
 class Channel < Recipient
@@ -17,13 +17,13 @@ class Channel < Recipient
     @member_count = member_count
   end
 
-  def  self.get(params)
-    super(CHANNEL_URL, params)
-  end
+  # def  self.get(params)
+  #   super(CHANNEL_URL, params)
+  # end
 
-  def details
-    puts "slack_id: #{slack_id}, name: #{name}, topic: #{topic}, member_count: #{member_count}"
-  end
+  # def details
+  #   puts "slack_id: #{slack_id}, name: #{name}, topic: #{topic}, member_count: #{member_count}"
+  # end
 
   def self.list_all
     all_channels = self.get(CHANNEL_URL, PARAMS)["channels"]

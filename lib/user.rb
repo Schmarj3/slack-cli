@@ -4,7 +4,7 @@ require 'dotenv'
 require_relative 'recipient'
 Dotenv.load
 
-USER_URL = "#{BASE_URL}users.list"
+USER_URL = "https://slack.com/api/users.list"
 
 
 class User < Recipient
@@ -15,14 +15,14 @@ class User < Recipient
     @real_name = real_name
   end
 
-  def self.get(url, params)
-    response = HTTParty.get(url, query: params)
-    return response
-  end
+  # def self.get(url, params)
+  #   response = HTTParty.get(url, query: params)
+  #   return response
+  # end
 
-  def details
-    puts "slack_id: #{slack_id}, name: #{name}, real_name: #{real_name}"
-  end
+  # def details
+  #   puts "slack_id: #{slack_id}, name: #{name}, real_name: #{real_name}"
+  # end
 
   def self.list_all
     all_members = self.get(USER_URL, PARAMS)["members"]
