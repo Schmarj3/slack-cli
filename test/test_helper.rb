@@ -8,8 +8,7 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/skip_dsl'
-require 'vcr/filter_sensitive_data'
-require_relative '../lib/slack_api_wrapper'
+require 'vcr'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
