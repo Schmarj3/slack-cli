@@ -27,8 +27,8 @@ describe "Workspace Class" do
 
   describe "select_channel method" do
     it "should return channel instance for 'random'" do
-      #when gets.chomp = "random"
-      puts "Type : random"
+      # when gets.chomp = "random"
+      puts "Type : 'random' or 'C01BWC8P6PQ' "
       selected = @workspace.select_channel
 
       expect(selected).must_be_kind_of Channel
@@ -36,7 +36,7 @@ describe "Workspace Class" do
     end
 
     it "test for no matching channel" do
-      #when gets.chomp = "test"
+      # when gets.chomp = "test"
       puts "Type : test"
       expect(@workspace.select_channel).must_be_nil
     end
