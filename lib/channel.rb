@@ -5,7 +5,7 @@ require_relative 'recipient'
 Dotenv.load
 
 
-CHANNEL_URL = "https://slack.com/api/conversations.list"
+CHANNEL_URL = "#{BASE_URL}conversations.list"
 
 
 class Channel < Recipient
@@ -17,9 +17,8 @@ class Channel < Recipient
     @member_count = member_count
   end
 
-  def self.get(url, params)
-    response = HTTParty.get(url, query: params)
-    return response
+  def  self.get(params)
+    super(CHANNEL_URL, params)
   end
 
   def details
@@ -38,6 +37,10 @@ class Channel < Recipient
       )
     end
   end
+
+  # def send_message(message)
+  # # call on the recepient class here to send message to user
+  # end
 end
 
 

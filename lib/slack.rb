@@ -32,17 +32,16 @@ def main
       workspace.channels.each { |channel| puts channel.name }
     when "C", "SELECT USER"
       puts "Please enter a Username or Slack ID:"
-      user_name = gets.chomp
-      workspace.select_user(user_name, nil)
+      workspace.select_user
     when "D", "SELECT CHANNEL"
       puts "Please enter a Channel or Slack ID:"
-      channel_name = gets.chomp
-      workspace.select_channel(channel_name, nil)
+      workspace.select_channel
     when "E", "DETAILS"
       workspace.show_details
     when "F", "SEND MESSAGE"
       p "send a message to the current recipient"
-      # workspace.send_message
+      workspace.send_message
+
     when "G", "Q", "QUIT PROGRAM"
       exit_program = true
     else

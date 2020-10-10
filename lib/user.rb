@@ -4,8 +4,7 @@ require 'dotenv'
 require_relative 'recipient'
 Dotenv.load
 
-
-USER_URL = "https://slack.com/api/users.list"
+USER_URL = "#{BASE_URL}users.list"
 
 
 class User < Recipient
@@ -36,4 +35,8 @@ class User < Recipient
       )
     end
   end
+
+  # def send_message(message)
+  #   # call on the recepient class here to send message to user
+  # end
 end

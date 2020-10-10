@@ -1,6 +1,6 @@
 require_relative 'user'
 require_relative 'channel'
-
+require_relative 'slack_api_wrapper'
 
 class Workspace
   attr_reader :channels, :users, :selected
@@ -12,7 +12,8 @@ class Workspace
   end
 
   # possible refactoring using .find & one parameter
-  def select_channel(name, slack_id)
+  def select_channel
+    name = gets.chomp
     if name
       selected = @channels.filter {|hash| hash.name == name }[0]
       results  = selected.nil? ? "No channel by that name" : selected.name
@@ -27,7 +28,8 @@ class Workspace
   end
 
   # possible refactoring using .find & one parameter
-  def select_user(name, slack_id)
+  def select_user
+    name = gets.chomp
     if name
       selected = @users.filter {|hash| hash.name == name }[0]
       results  = selected.nil? ? "No user by that name" : selected.name
@@ -51,28 +53,11 @@ class Workspace
     end
   end
 
-  # def show_details
-  #   @selected ? @selected.details : puts("No recipient is currently selected.")
-  # end
-  module SlackApiWrapper
-    BASE_URL = ""
-
-  end
   def send_message
     # store the user's message
     # semd message to the @selected recipient
+    puts "Enter your message here:"
+    message = gets.chomp
+    @selected.send_message(message)
   end
 end
-#
-# new_workspace = Workspace.new()
-
-# pp new_workspace.channels
-# pp new_workspace.users
-
-#  pp new_workspace.select_channel("general", "C01BNBZJVU7")
-#
-#  pp new_workspace.select_channel("general", nil)
-#
-# pp new_workspace.select_channel(nil, "C01BNBZJVU7")
-#
-# pp new_workspace.select_user("sophiadonan", nil)
