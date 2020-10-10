@@ -1,9 +1,5 @@
 require 'httparty'
-require 'dotenv'
-
 require_relative 'recipient'
-Dotenv.load
-
 
 CHANNEL_URL = "https://slack.com/api/conversations.list"
 

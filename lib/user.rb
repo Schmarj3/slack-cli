@@ -1,8 +1,5 @@
 require 'httparty'
-require 'dotenv'
-
 require_relative 'recipient'
-Dotenv.load
 
 USER_URL = "https://slack.com/api/users.list"
 

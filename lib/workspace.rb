@@ -56,8 +56,12 @@ class Workspace
   def send_message
     # store the user's message
     # semd message to the @selected recipient
-    puts "Enter your message here:"
-    message = gets.chomp
-    pp @selected.send_message(message)
+    if @selected.nil?
+      puts "Please select a user or channel."
+    else
+      puts "Enter your message here:"
+      message = gets.chomp
+      pp @selected.send_message(message)
+    end
   end
 end

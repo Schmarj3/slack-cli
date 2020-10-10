@@ -4,8 +4,8 @@ Dotenv.load
 
 # BASE_URL = 'https://slack.com/api/'
 
-API_KEY = ENV['SLACK_TOKEN']
-PARAMS = {token: API_KEY}
+BOT_API_KEY = ENV['BOT_TOKEN']
+PARAMS = {token: ENV['SLACK_TOKEN']}
 
 class Recipient
   attr_reader :slack_id, :name
@@ -16,15 +16,10 @@ class Recipient
   end
 
   def send_message(message)
-    p message
-    p API_KEY
-    p @slack_id
-    # p BASE_URL
-
     response = HTTParty.post(
         "https://slack.com/api/chat.postMessage",
         body:  {
-            token: API_KEY,
+            token: BOT_API_KEY,
             text: message,
             channel: @slack_id
         },
@@ -47,5 +42,4 @@ class Recipient
   def self.list_all
     raise NotImplementedError, 'Implement me in a child class!'
   end
-
 end
