@@ -13,16 +13,20 @@ class Workspace
 
   # possible refactoring using .find & one parameter
   def select_channel
-    name = gets.chomp
-    if name
-      selected = @channels.filter {|hash| hash.name == name }[0]
-      results  = selected.nil? ? "No channel by that name" : selected.name
-      puts "Result: #{results}"
-    elsif slack_id
-      selected = @channels.filter {|hash| hash.slack_id == slack_id }[0]
-      results  = selected.nil? ? "No channel by that name" : selected.slack_id
-      puts "Result: #{results}"
+    user_input = gets.chomp
+
+    if user_input
+      selected = @channels.find { |hash| hash.name == user_input }
+
+      if selected.nil?
+        selected = @channels.find {|hash| hash.slack_id == user_input }
+      end
+
+      selected.nil? ? "This is not a valid Channel" : selected.name
+    else
+      puts "This is not a valid Channel"
     end
+
     @selected = selected
     return selected
   end
