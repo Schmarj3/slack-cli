@@ -340,4 +340,389 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"ok":true,"channel":"D01C359SH5Y","ts":"1602379358.000100","message":{"bot_id":"B01C9A1BQSY","type":"message","text":"hello","user":"U01BWD74PD4","ts":"1602379358.000100","team":"T01C3AES9RR","bot_profile":{"id":"B01C9A1BQSY","deleted":false,"name":"SophiaAPIApp","updated":1602265845,"app_id":"A01CFPEDT5F","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"T01C3AES9RR"}}}'
   recorded_at: Sun, 11 Oct 2020 01:22:38 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hi&channel=USLACKBOT
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 02:45:50 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 6d29a574c4149e1059a6dc9ab096d701
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-wmb9,haproxy-edge-pdx-iofq
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 02:45:50 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hi&channel=C01BNBZJVU7
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 02:46:04 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 94da7c56009d9bae4482452d24fc7e71
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-c9zz,haproxy-edge-pdx-herk
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 02:46:04 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hello%20slack&channel=USLACKBOT
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 02:58:47 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 2623de0bcdedfc3ea5e474249b39c569
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-fy6h,haproxy-edge-pdx-raf5
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 02:58:47 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=test&channel=USLACKBOT
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 03:36:01 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - db0a6bb24ff697e40fdbe2dc0fd2d87e
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-0gy3,haproxy-edge-pdx-bahq
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 03:36:01 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=test&channel=C01BWC8P6PQ
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 03:36:04 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 0a5f2892bc9fb7bd13fcb10017124a9c
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-qynb,haproxy-edge-pdx-d6lr
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 03:36:04 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hi&channel=C01BWC8P6PQ
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 03:39:45 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - fbe7891cd2d1e3293b423ebd40cc756c
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-ozck,haproxy-edge-iad-zwf5
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 03:39:45 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=test%20message&channel=USLACKBOT
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 03:46:04 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 11034249b9a1d2cda9ae464ecc7edba1
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      X-Slack-Backend:
+      - r
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-ozck,haproxy-edge-iad-nzuf
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":false,"error":"account_inactive"}'
+  recorded_at: Sun, 11 Oct 2020 03:46:04 GMT
 recorded_with: VCR 6.0.0

@@ -32,10 +32,12 @@ def main
       workspace.channels.each { |channel| puts channel.name }
     when "C", "SELECT USER"
       puts "Please enter a Username or Slack ID:"
-      workspace.select_user
+      input = gets.chomp
+      workspace.select_user(input)
     when "D", "SELECT CHANNEL"
       puts "Please enter a Channel or Slack ID:"
-      workspace.select_channel
+      input = gets.chomp
+      workspace.select_channel(input)
     when "E", "DETAILS"
       workspace.show_details
     when "F", "SEND MESSAGE"

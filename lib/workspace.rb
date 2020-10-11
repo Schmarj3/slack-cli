@@ -11,8 +11,8 @@ class Workspace
     @selected
   end
 
-  def select_channel
-    user_input = gets.chomp
+  def select_channel(user_input)
+    user_input
 
     if user_input
       selected = @channels.find { |hash| hash.name == user_input }
@@ -29,8 +29,8 @@ class Workspace
     return selected
   end
 
-  def select_user
-    user_input = gets.chomp
+  def select_user(user_input)
+    user_input
 
     if user_input
       selected = @users.find { |hash| hash.name == user_input }
@@ -57,7 +57,7 @@ class Workspace
 
   def send_message
     # store the user's message
-    # semd message to the @selected recipient
+    # send message to the @selected recipient
     if @selected.nil?
       puts "Please select a user or channel."
     else
