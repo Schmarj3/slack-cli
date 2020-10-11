@@ -145,4 +145,199 @@ http_interactions:
         Etienne","real_name_normalized":"Marjorie Etienne","display_name":"Marjorie
         Etienne","display_name_normalized":"Marjorie Etienne","fields":null,"status_text":"","status_emoji":"","status_expiration":0,"avatar_hash":"fe3fd35b803d","image_original":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_original.png","is_custom_image":true,"image_24":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_24.png","image_32":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_32.png","image_48":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_48.png","image_72":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_72.png","image_192":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_192.png","image_512":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_512.png","image_1024":"https:\/\/avatars.slack-edge.com\/2020-10-06\/1396414168151_fe3fd35b803d79a30059_1024.png","status_text_canonical":"","team":"T01C3AES9RR"},"is_admin":false,"is_owner":false,"is_primary_owner":false,"is_restricted":false,"is_ultra_restricted":false,"is_bot":false,"is_app_user":false,"updated":1602017977,"has_2fa":false}],"cache_ts":1602363116,"response_metadata":{"next_cursor":""}}'
   recorded_at: Sat, 10 Oct 2020 20:51:56 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hello&channel=C01BWC8P6PQ
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 01:17:05 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 64b57f9a812de93b7ed9a2a59f613d2d
+      X-Oauth-Scopes:
+      - chat:write
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      X-Accepted-Oauth-Scopes:
+      - chat:write
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '320'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-ttqe,haproxy-edge-iad-9len
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"C01BWC8P6PQ","ts":"1602379025.000100","message":{"bot_id":"B01C9A1BQSY","type":"message","text":"hello","user":"U01BWD74PD4","ts":"1602379025.000100","team":"T01C3AES9RR","bot_profile":{"id":"B01C9A1BQSY","deleted":false,"name":"SophiaAPIApp","updated":1602265845,"app_id":"A01CFPEDT5F","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"T01C3AES9RR"}}}'
+  recorded_at: Sun, 11 Oct 2020 01:17:05 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hello&channel=USLACKBOT
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 01:19:11 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - 311b53e0fd917b348da48a6beeb97f2a
+      X-Oauth-Scopes:
+      - chat:write
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      X-Accepted-Oauth-Scopes:
+      - chat:write
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '324'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-41k4,haproxy-edge-pdx-9hgy
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"D01BNCY0PJT","ts":"1602379151.000100","message":{"bot_id":"B01C9A1BQSY","type":"message","text":"hello","user":"U01BWD74PD4","ts":"1602379151.000100","team":"T01C3AES9RR","bot_profile":{"id":"B01C9A1BQSY","deleted":false,"name":"SophiaAPIApp","updated":1602265845,"app_id":"A01CFPEDT5F","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"T01C3AES9RR"}}}'
+  recorded_at: Sun, 11 Oct 2020 01:19:11 GMT
+- request:
+    method: post
+    uri: https://slack.com/api/chat.postMessage
+    body:
+      encoding: UTF-8
+      string: token=xoxb-1411354893875-1404449159446-hav4HpZR63IY1vd674EC9P3K&text=hello&channel=U01BWC8NMK8
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Oct 2020 01:22:38 GMT
+      Server:
+      - Apache
+      X-Slack-Req-Id:
+      - a74eab3f5c436fcb8ac966196b969709
+      X-Oauth-Scopes:
+      - chat:write
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Slack-Backend:
+      - r
+      X-Content-Type-Options:
+      - nosniff
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      X-Xss-Protection:
+      - '0'
+      X-Accepted-Oauth-Scopes:
+      - chat:write
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags
+      Vary:
+      - Accept-Encoding
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      Content-Length:
+      - '320'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Via:
+      - haproxy-www-xhax,haproxy-edge-iad-t0k4
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"channel":"D01C359SH5Y","ts":"1602379358.000100","message":{"bot_id":"B01C9A1BQSY","type":"message","text":"hello","user":"U01BWD74PD4","ts":"1602379358.000100","team":"T01C3AES9RR","bot_profile":{"id":"B01C9A1BQSY","deleted":false,"name":"SophiaAPIApp","updated":1602265845,"app_id":"A01CFPEDT5F","icons":{"image_36":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_36.png","image_48":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/bot_48.png","image_72":"https:\/\/a.slack-edge.com\/80588\/img\/plugins\/app\/service_72.png"},"team_id":"T01C3AES9RR"}}}'
+  recorded_at: Sun, 11 Oct 2020 01:22:38 GMT
 recorded_with: VCR 6.0.0

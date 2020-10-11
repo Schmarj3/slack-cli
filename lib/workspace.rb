@@ -11,7 +11,6 @@ class Workspace
     @selected
   end
 
-  # possible refactoring using .find & one parameter
   def select_channel
     user_input = gets.chomp
 
@@ -22,29 +21,28 @@ class Workspace
         selected = @channels.find {|hash| hash.slack_id == user_input }
       end
 
-      selected.nil? ? "This is not a valid Channel" : selected.name
-    else
-      puts "This is not a valid Channel"
+      results = selected.nil? ? "This is not a valid Channel" : selected.name
+      puts "Result: #{results} "
     end
 
     @selected = selected
     return selected
   end
 
-  # possible refactoring using .find & one parameter
   def select_user
-    name = gets.chomp
-    if name
-      selected = @users.filter {|hash| hash.name == name }[0]
-      results  = selected.nil? ? "No user by that name" : selected.name
-      puts "Result: #{results}"
-    elsif slack_id
-      selected = @users.filter {|hash| hash.slack_id == slack_id }[0]
-      results  = selected.nil? ? "No user by that name" : selected.slack_id
-      puts "Result: #{results}"
-    else
-      puts "Please try again"
+    user_input = gets.chomp
+
+    if user_input
+      selected = @users.find { |hash| hash.name == user_input }
+
+      if selected.nil?
+        selected = @users.find {|hash| hash.slack_id == user_input }
+      end
+
+      results = selected.nil? ? "This is not a valid User" : selected.name
+      puts "Result: #{results} "
     end
+
     @selected = selected
     return selected
   end
@@ -65,7 +63,10 @@ class Workspace
     else
       puts "Enter your message here:"
       message = gets.chomp
-      pp @selected.send_message(message)
+      http_post_response = @selected.send_message(message)
+      p http_post_response
     end
+
+    return !!http_post_response
   end
 end
